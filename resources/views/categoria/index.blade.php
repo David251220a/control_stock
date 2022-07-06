@@ -15,40 +15,31 @@
                     <tr>
                         <th>Descripcion</th>
                         <th>Usuario</th>
-                        <th>Users</th>
-                        <th>Status</th>
+                        {{-- <th>Users</th> --}}
+                        {{-- <th>Status</th> --}}
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
                     @foreach ($categorias as $item)
                         <tr>
-                            <td>{{$item->descripcion}}
+                            <td>
+                                {{ $item->descripcion }}
                             </td>
 
-                            <td>Albert Cook</td>
-
                             <td>
-                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Lilian Fuller">
-                                        <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Sophia Wilkerson">
-                                        <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                        class="avatar avatar-xs pull-up" title="Christina Parker">
-                                        <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                                    </li>
-                                </ul>
+                                {{ $item->usuario->name }}
                             </td>
 
-                            <td><span class="badge bg-label-primary me-1">Active</span></td>
-
                             <td>
-                                <div class="dropdown">
+
+                                    <a href="{{ route('categoria.create')}}">
+<button type="button" class="btn rounded-pill btn-outline-warning">
+                                    Editar</button>
+                                    </a>
+
+
+                                {{-- <div class="dropdown">
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                         data-bs-toggle="dropdown">
                                         <i class="bx bx-dots-vertical-rounded"></i>
@@ -60,7 +51,7 @@
                                                 class="bx bx-trash me-1"></i>
                                             Delete</a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </td>
                         </tr>
                     @endforeach

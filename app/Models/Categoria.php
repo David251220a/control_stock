@@ -10,4 +10,9 @@ class Categoria extends Model
     use HasFactory;
 
     protected $table = "categoria";
+
+    public function usuario(){
+        return $this->belongsTo(User::class, 'usuario_grabacion');
+    }
+
 }
