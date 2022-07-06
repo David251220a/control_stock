@@ -21,10 +21,12 @@
                                 <td>
                                     {{$item->descripcion}}
                                 </td>
+
                                 <td>{{$item->categoria->descripcion}}</td>
                                 <td>
 
                                 </td>
+
                                 <td><span class="badge bg-label-primary me-1">Active</span></td>
                                 <td>
                                     <div class="dropdown">
