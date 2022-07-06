@@ -143,8 +143,15 @@
                                 <div data-i18n="Account">Categorias</div>
                             </a>
                         </li>
-                        <!-- Layouts -->
+
                         <li class="menu-item">
+                            <a href="{{ route('unidad.index') }}" class="menu-link">
+                                <i class="menu-icon tf-icons bx bx-layout"></i>
+                                <div data-i18n="Account">Unidad Medida</div>
+                            </a>
+                        </li>
+                        <!-- Layouts -->
+                        {{-- <li class="menu-item">
                             <a href="javascript:void(0);" class="menu-link menu-toggle">
                                 <i class="menu-icon tf-icons bx bx-layout"></i>
                                 <div data-i18n="Layouts">Categorias - no</div>
@@ -177,7 +184,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- Separador De titulos --}}
                         <li class="menu-header small text-uppercase">
                             <span class="menu-header-text">Sector Ventas</span>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\UnidadMedidaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,5 @@ Route::middleware([
 ])->group(function () {
     Route::get('/', [InicioController::class, 'index'])->name('dashboard');
     Route::resource('/categorias', CategoriaController::class)->names('categoria');
+    Route::resource('/unidad_medida', UnidadMedidaController::class)->names('unidad');
 });
