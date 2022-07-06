@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\UnidadMedidaController;
@@ -28,4 +29,5 @@ Route::middleware([
     Route::get('/', [InicioController::class, 'index'])->name('dashboard');
     Route::resource('/categorias', CategoriaController::class)->names('categoria');
     Route::resource('/unidad_medida', UnidadMedidaController::class)->names('unidad');
+    Route::resource('/articulos', ArticuloController::class)->names('articulo');
 });
