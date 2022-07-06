@@ -16,4 +16,9 @@ class Articulo extends Model
     public function categoria(){
         return $this->belongsTo(Categoria::class, 'categoria_id');
     }
+
+    public function estado()
+    {
+        return $this->belongsTo(Estado::class, 'estado_id');
+    }
 }

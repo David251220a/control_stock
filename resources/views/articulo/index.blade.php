@@ -30,10 +30,10 @@
                                     {{$item->unidad_medida_id}}
                                 </td>
                                 <td>
-                                    <span class="badge bg-label-success me-1">{{$item->estado_id}}</span>
+                                    <span class="badge bg-label-success me-1">{{$item->estado->descripcion}}</span>
                                 </td>
                                 <td>
-                                    <a href="#" class="btn rounded-pill btn-outline-primary">Editar</a>
+                                    <a href="{{ route('articulo.edit', $item) }}" class="btn rounded-pill btn-outline-primary">Editar</a>
                                 </td>
                             </tr>
                         @endforeach

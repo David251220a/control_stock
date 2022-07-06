@@ -41,4 +41,34 @@ class ArticuloController extends Controller
         return redirect()->route('articulo.index')->with('message', 'Se ha creado con exito el articulo!.');
 
     }
+
+    public function edit(Articulo $articulo)
+    {
+        $categoria = Categoria::where('estado_id', 1)->get();
+        $unidad = UnidadMedida::where('estado_id', 1)->get();
+        return view('articulo.edit', compact('articulo', 'categoria', 'unidad'));
+    }
+
+    public function update(Request $request, Articulo $articulo)
+    {
+
+        $data = $request->validate([
+            'descripcion' => 'required',
+            'categoria_id' => 'required',
+            'unidad_medida_id' => 'required',
+            'porc_iva' => 'required',
+        ]);
+
+        if($request->estado_id == 'on'){
+            $data['estado_id'] = 1;
+        }else{
+            $data['estado_id'] = 2;
+        }
+
+        $data['usuario_modificacion'] = auth()->user()->id;
+
+        $articulo->update($data);
+
+        return redirect()->route('articulo.index')->with('message', 'Se ha editado con exito el articulo!.');
+    }
 }
