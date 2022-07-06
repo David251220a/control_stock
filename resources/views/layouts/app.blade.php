@@ -37,6 +37,7 @@
         <link rel="stylesheet" href="{{asset('assets/vendor/css/core.css')}}" class="template-customizer-core-css" />
         <link rel="stylesheet" href="{{asset('assets/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
         <link rel="stylesheet" href="{{asset('assets/css/demo.css')}}" />
+        @stack('style')
 
         <!-- Vendors CSS -->
         <link rel="stylesheet" href="{{asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
@@ -463,7 +464,7 @@
                     > --}}
 
                     <nav
-                      class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                      class="layout-navbar container navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                       id="layout-navbar"
                     >
                         <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -580,7 +581,7 @@
                     <!-- Content wrapper -->
                     <div class="content-wrapper">
 
-                        <div class="container-fluid">
+                        <div class="container">
                             {{$slot}}
                         </div>
 
@@ -637,7 +638,7 @@
         <!-- Core JS -->
         <!-- build:js assets/vendor/js/core.js -->
         @livewireScripts
-
+        @stack('js')
         <script src="{{asset('assets/vendor/libs/jquery/jquery.js')}}"></script>
         <script src="{{asset('assets/vendor/libs/popper/popper.js')}}"></script>
         <script src="{{asset('assets/vendor/js/bootstrap.js')}}"></script>

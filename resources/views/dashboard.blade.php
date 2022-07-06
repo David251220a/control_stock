@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="basic-icon-default-message">Message</label>
+                        <label class="form-label" for="basic-icon-default-message">Mensaje</label>
                         <div class="input-group input-group-merge">
                             <span id="basic-icon-default-message2" class="input-group-text"><i
                                     class="bx bx-comment"></i></span>
@@ -58,7 +58,7 @@
                                 aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2"></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="submit" class="btn btn-outline-success">Guardar</button>
                 </form>
             </div>
         </div>
