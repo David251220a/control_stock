@@ -457,8 +457,13 @@
                 <div class="layout-page">
                     <!-- Navbar -->
 
-                    <nav
+                    {{-- <nav
                       class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                      id="layout-navbar"
+                    > --}}
+
+                    <nav
+                      class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                       id="layout-navbar"
                     >
                         <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -516,7 +521,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="flex-grow-1">
-                                                        <span class="fw-semibold d-block">John Doe</span>
+                                                        <span class="fw-semibold d-block">{{Auth::user()->name}}</span>
                                                         <small class="text-muted">Admin</small>
                                                     </div>
                                                 </div>
@@ -528,7 +533,7 @@
                                         <li>
                                             <a class="dropdown-item" href="#">
                                                 <i class="bx bx-user me-2"></i>
-                                                <span class="align-middle">My Profile</span>
+                                                <span class="align-middle">Mi Perfil</span>
                                             </a>
                                         </li>
                                         <li>
@@ -575,7 +580,7 @@
                     <!-- Content wrapper -->
                     <div class="content-wrapper">
 
-                        <div class="container">
+                        <div class="container-fluid">
                             {{$slot}}
                         </div>
 
