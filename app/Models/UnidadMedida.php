@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class UnidadMedida extends Model
 {
     use HasFactory;
+
+    protected $table = "unidad_medida";
 }
