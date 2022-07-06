@@ -1,7 +1,12 @@
 <x-app-layout>
 
-    <div class="card">
-        <h5 class="card-header">Categorias</h5>
+    <div class="card my-4">
+        <h5 class="card-header">
+            Categorias
+            <div class="my-2">
+                <a href="{{ route('categoria.create') }}" class="text-primary border-primary">Crear Categoria</a>
+            </div>
+        </h5>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>
@@ -61,5 +66,5 @@
         </div>
     </div>
     <br>
-    <button type="button" class="btn rounded-pill btn-outline-primary">Agregar</button>
+
 </x-app-layout>

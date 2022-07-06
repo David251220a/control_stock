@@ -11,4 +11,8 @@ class articulo extends Model
 
     protected $table = "articulo";
 
+    public function categoria(){
+        return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
+
 }
