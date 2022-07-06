@@ -4,7 +4,7 @@
         <h5 class="card-header">
             Categorias
             <div class="my-2">
-                <a href="{{ route('categoria.create') }}" class="text-primary border-primary">Crear Categoria</a>
+                <a href="{{ route('categoria.create') }}" class="text-primary">Crear Categoria</a>
             </div>
         </h5>
         <div class="table-responsive text-nowrap">

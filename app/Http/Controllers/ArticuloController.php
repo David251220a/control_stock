@@ -9,7 +9,7 @@ class ArticuloController extends Controller
 {
     public function index()
     {
-        $articulos = articulo::where('estado_id', 1)->get();
+        $articulos = articulo::where('estado_id', 1)->paginate(10);
 
         return view('articulo.index', compact('articulos'));
     }
