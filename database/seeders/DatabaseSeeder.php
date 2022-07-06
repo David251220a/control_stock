@@ -22,7 +22,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            EstadoSeeder::class,
             Usuario::class,
+            CategoriaSeeder::class,
+            UnidadMedidaSeeder::class,
         ]);
     }
 }
