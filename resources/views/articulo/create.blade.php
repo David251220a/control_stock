@@ -18,17 +18,20 @@
                         <small class="text-muted float-end">articulo.create</small>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="{{ route('articulo.store') }}" method="POST" onsubmit="return checkSubmit();">
+
+                            @csrf
+
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Articulo</label>
-                                <input type="text" class="form-control" id="basic-default-fullname" name="descripcion" placeholder="Articulo" />
+                                <input type="text" class="form-control" id="basic-default-fullname" name="descripcion" placeholder="Articulo" value="{{ old('descripcion')}}" />
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-company">Categoria</label>
                                 <select class="form-control js-example-basic-single" name="categoria_id">
                                     @foreach ($categoria as $item)
-                                        <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                                        <option {{(old('categoria_id') == $item->id ? 'selected' : '')}} value="{{ $item->id }}">{{ $item->descripcion }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -37,14 +40,15 @@
                                 <label class="form-label" for="basic-default-company">Unidad Medida</label>
                                 <select class="form-control js-example-basic-single" name="unidad_medida_id">
                                     @foreach ($unidad as $item)
-                                        <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                                        <option {{(old('unidad_medida_id') == $item->id ? 'selected' : '')}} value="{{ $item->id }}">{{ $item->descripcion }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Porcentaje IVA</label>
-                                <input type="text" class="form-control" id="basic-default-fullname" name="porc_iva" placeholder="IVA" />
+                                <input type="text" class="form-control" id="basic-default-fullname" name="porc_iva" placeholder="IVA" value="{{old('porc_iva')}}"
+                                onkeyup="format(this)" onchange="format(this)" />
                             </div>
 
                             <button type="submit" class="btn rounded-pill btn-outline-primary">Guardar</button>
@@ -58,12 +62,7 @@
     </div>
     @push('js')
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script>
-            $(document).ready(function() {
-                // $('.js-example-basic-single').select2({ dropdownCssClass: "bigdrop" });
-                $('.js-example-basic-single').select2();
-            });
-        </script>
+        <script src="{{ asset('js/crear_articulo.js') }}"></script>
     @endpush
 </x-app-layout>
 

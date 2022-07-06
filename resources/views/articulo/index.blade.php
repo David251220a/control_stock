@@ -41,7 +41,15 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="mt-4 px-4">
+                {!! $articulos->links() !!}
+            </div>
         </div>
     </div>
+
+    @push('js')
+
+    @endpush
 
 </x-app-layout>
