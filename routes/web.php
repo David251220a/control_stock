@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\InicioController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,5 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/', [InicioController::class, 'index'])->name('dashboard');
+    Route::resource('/categorias', CategoriaController::class)->names('categoria');
 });
