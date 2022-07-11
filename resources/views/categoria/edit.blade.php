@@ -39,17 +39,6 @@
                                     value="{{ old('descripcion', $categoria->descripcion) }}" />
                             </div>
 
-                            <div class="mb-3">
-                                <label class="form-label" for="basic-default-company">Unidad Medida</label>
-                                <select class="form-control js-example-basic-single" name="unidad_medida_id">
-                                    @foreach ($unidad as $item)
-                                        <option
-                                            {{ old('unidad_medida_id', $articulo->unidad_medida_id) == $item->id ? 'selected' : '' }}
-                                            value="{{ $item->id }}">{{ $item->descripcion }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
                             <div class="form-check form-switch mb-3">
                                 <input class="form-check-input" type="checkbox" id="estado_id" name="estado_id"
                                     {{ $categoria->estado_id == 1 ? 'checked' : '' }} />

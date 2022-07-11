@@ -10,7 +10,7 @@ class CategoriaController extends Controller
     public function index(){
 
 
-        $categorias = Categoria::where('estado_id', 1)->paginate(10);
+        $categorias = Categoria::where('estado_id', 2)->paginate(10);
 
         return view('categoria.index', compact('categorias'));
     }
@@ -38,7 +38,28 @@ class CategoriaController extends Controller
 
     public function edit(Categoria $categoria)
     {
-        return view('categoria.edit', compact('id'));
+        return view('categoria.edit', compact('categoria'));
+    }
+
+    public function update(Request $request, Categoria $categoria)
+    {
+
+        $data = $request->validate([
+            'descripcion' => 'required',
+
+        ]);
+
+        if($request->estado_id == 'on'){
+            $data['estado_id'] = 1;
+        }else{
+            $data['estado_id'] = 2;
+        }
+
+        $data['usuario_modificacion'] = auth()->user()->id;
+
+        $categoria->update($data);
+
+        return redirect()->route('categoria.index')->with('message', 'Se ha editado con exito la cAtegoria!.');
     }
     //
 }

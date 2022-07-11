@@ -16,7 +16,7 @@
                         <th>Descripcion</th>
                         <th>Usuario</th>
                         {{-- <th>Users</th> --}}
-                        {{-- <th>Status</th> --}}
+                        <th>Estado</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -30,7 +30,9 @@
                             <td>
                                 {{ $item->usuario->name }}
                             </td>
-
+                            <td>
+                                {{ $item->estado_id }}
+                            </td>
                             <td>
 
                                 <a href="{{ route('categoria.edit', $item) }}">
