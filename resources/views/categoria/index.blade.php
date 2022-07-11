@@ -33,10 +33,10 @@
 
                             <td>
 
-                                    <a href="{{ route('categoria.create')}}">
-<button type="button" class="btn rounded-pill btn-outline-warning">
-                                    Editar</button>
-                                    </a>
+                                <a href="{{ route('categoria.edit', $item) }}">
+                                    <button type="button" class="btn rounded-pill btn-outline-warning">
+                                        Editar</button>
+                                </a>
 
 
                                 {{-- <div class="dropdown">
