@@ -11,4 +11,6 @@ class Estado extends Model
 
     protected $table = "estado";
 
+    public $timestamps = false;
+
 }

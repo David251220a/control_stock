@@ -1,78 +1,63 @@
 <x-app-layout>
 
-    <div class="col-xxl">
-        <div class="card mb-4">
-          <div class="card-header d-flex align-items-center justify-content-between">
-            <h5 class="mb-0">Categoria</h5>
-            <small class="text-muted float-end">Default label</small>
-          </div>
-          <div class="card-body">
-            <form>
-              <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="basic-default-name" placeholder="John Doe" />
+    @push('style')
+        <style>
+            .bigdrop.select2-container .select2-results {
+                max-height: 200px;
+            }
+
+            .bigdrop .select2-results {
+                max-height: 200px;
+            }
+
+            .bigdrop .select2-choices {
+                min-height: 150px;
+                max-height: 150px;
+                overflow-y: auto;
+            }
+        </style>
+    @endpush
+    <div class="py-4">
+
+        <div class="row">
+            <div class="col-xl">
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Crear Categoria</h5>
+                        <small class="text-muted float-end">categoria.create</small>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('categoria.store') }}" method="POST" onsubmit="return checkSubmit();">
+
+                            @csrf
+
+                            <div class="mb-3">
+                                <label class="form-label" for="basic-default-fullname">Categoria</label>
+                                <input type="text" class="form-control" id="basic-default-fullname"
+                                    name="descripcion" placeholder="Categoria" value="{{ old('descripcion') }}" />
+                            </div>
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="estado_id" name="estado_id"
+                                    checked="">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Estado</label>
+                            </div>
+
+
+                            <button type="submit" class="btn rounded-pill btn-outline-primary">Guardar</button>
+                            <button type="button" onclick="return window.history.back();"
+                                class="btn rounded-pill btn-outline-danger">Cancelar</button>
+                        </form>
+
+                    </div>
                 </div>
-              </div>
-              <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-company">Company</label>
-                <div class="col-sm-10">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="basic-default-company"
-                    placeholder="ACME Inc."
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-email">Email</label>
-                <div class="col-sm-10">
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="text"
-                      id="basic-default-email"
-                      class="form-control"
-                      placeholder="john.doe"
-                      aria-label="john.doe"
-                      aria-describedby="basic-default-email2"
-                    />
-                    <span class="input-group-text" id="basic-default-email2">@example.com</span>
-                  </div>
-                  <div class="form-text">You can use letters, numbers & periods</div>
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-phone">Phone No</label>
-                <div class="col-sm-10">
-                  <input
-                    type="text"
-                    id="basic-default-phone"
-                    class="form-control phone-mask"
-                    placeholder="658 799 8941"
-                    aria-label="658 799 8941"
-                    aria-describedby="basic-default-phone"
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-message">Message</label>
-                <div class="col-sm-10">
-                  <textarea
-                    id="basic-default-message"
-                    class="form-control"
-                    placeholder="Hi, Do you have a moment to talk Joe?"
-                    aria-label="Hi, Do you have a moment to talk Joe?"
-                    aria-describedby="basic-icon-default-message2"
-                  ></textarea>
-                </div>
-              </div>
-              <div class="row justify-content-end">
-                <div class="col-sm-10">
-                  <button type="submit" class="btn btn-primary">Send</button>
-                </div>
-              </div>
-            </form>
-          </div>
+
+            </div>
         </div>
+
+
+    </div>
+    @push('js')
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        {{-- <script src="{{ asset('js/crear_articulo.js') }}"></script> --}}
+    @endpush
 </x-app-layout>
