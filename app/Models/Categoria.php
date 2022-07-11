@@ -11,6 +11,8 @@ class Categoria extends Model
 
     protected $table = "categoria";
 
+    protected $guarded=[];
+
     public function usuario(){
         return $this->belongsTo(User::class, 'usuario_grabacion');
     }
