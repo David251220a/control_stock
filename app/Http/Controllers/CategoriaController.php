@@ -10,7 +10,7 @@ class CategoriaController extends Controller
     public function index(){
 
 
-        $categorias = Categoria::where('estado_id', 2)->paginate(10);
+        $categorias = Categoria::paginate(10);
 
         return view('categoria.index', compact('categorias'));
     }
